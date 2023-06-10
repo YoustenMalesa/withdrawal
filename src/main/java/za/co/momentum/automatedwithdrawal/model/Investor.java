@@ -46,7 +46,7 @@ public class Investor {
     @JoinColumn(name = "date_updated")
     private LocalDateTime dateUpdated;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "INVESTOR_PRODUCT",
             joinColumns = @JoinColumn(name = "investor_id"),
