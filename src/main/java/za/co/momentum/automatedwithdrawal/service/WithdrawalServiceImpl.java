@@ -69,4 +69,14 @@ public class WithdrawalServiceImpl implements WithdrawalService {
 
         withdrawalRepository.save(withdrawal);
     }
+
+    @Override
+    public Withdrawal findByStatus(String status) {
+        return withdrawalRepository.findFirstByStatus(status);
+    }
+
+    @Override
+    public void updateWithdrawal(Withdrawal withdrawal) {
+        withdrawalRepository.saveAndFlush(withdrawal);
+    }
 }

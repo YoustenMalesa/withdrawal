@@ -27,6 +27,11 @@ public class InvestorServiceImpl implements InvestorService {
         return investorRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public void updateInvestor(Investor investor) {
+        investorRepository.saveAndFlush(investor);
+    }
+
     void mock() {
         Investor investor = new Investor();
         investor.setFirstName("Yousten");
